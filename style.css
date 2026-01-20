@@ -30,7 +30,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20vh 15% 50vh 15%; /* Space to see the text moving at start/end */
+    padding: 20vh 15% 50vh 15%;
+    /* Space to see the text moving at start/end */
     scrollbar-width: none;
 }
 
@@ -143,4 +144,27 @@ input[type="color"] {
 /* Utility classes */
 .hidden {
     opacity: 0.2;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.mirrored {
+    transform: scaleX(-1);
 }

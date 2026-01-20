@@ -6,6 +6,7 @@ const speedInput = document.getElementById('speed');
 const fontSizeInput = document.getElementById('font-size');
 const bgColorInput = document.getElementById('bg-color');
 const textColorInput = document.getElementById('text-color');
+const mirrorModeCheckbox = document.getElementById('mirror-mode');
 const controls = document.getElementById('controls');
 
 let isPlaying = false;
@@ -32,7 +33,7 @@ function animateScroll() {
 playPauseBtn.addEventListener('click', () => {
     isPlaying = !isPlaying;
     playPauseBtn.textContent = isPlaying ? 'Pause' : 'Play';
-    
+
     if (isPlaying) {
         // When playing, make prompter text non-editable for better experience
         prompterText.contentEditable = 'false';
@@ -55,6 +56,14 @@ resetBtn.addEventListener('click', () => {
 });
 
 // Settings interaction
+mirrorModeCheckbox.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        prompterText.classList.add('mirrored');
+    } else {
+        prompterText.classList.remove('mirrored');
+    }
+});
+
 speedInput.addEventListener('input', () => {
     // Speed update handled in animateScroll
 });
